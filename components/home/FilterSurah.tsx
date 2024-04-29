@@ -5,12 +5,14 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 interface Surah {
   number: Number,
   list: Object,
-  transliteration: {
-    id: String
-  },
-  translation: {
-    id: String
-  }
+  list: {
+    transliteration: {
+      id: string;
+    };
+    translation: {
+      id: string;
+    };
+  };
 }
 
 interface FilterSurahProps {
