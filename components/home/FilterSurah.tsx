@@ -4,11 +4,13 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
 interface Surah {
   number: Number,
-  transliteration: {
-    id: String
-  },
-  translation: {
-    id: String
+  list: {    
+    transliteration: {
+      id: String
+    },
+    translation: {
+      id: String
+    }
   }
 }
 
