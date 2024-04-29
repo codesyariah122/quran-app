@@ -31,7 +31,7 @@ export default function Home() {
   };
 
   return (
-    <DefaultLayout isLoading={isLoaded} pageTitle="Quran Indo | Kemenag" >
+    <DefaultLayout isLoading={isLoaded} pageTitle="Quran App | Kemenag" >
     {
       isLoaded && (
         <Loading text="Waiting For Surah"/>
