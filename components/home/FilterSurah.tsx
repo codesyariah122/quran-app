@@ -20,8 +20,8 @@ interface FilterSurahProps {
 }
 
 export default function FilterSurah({ lists, onChange }: FilterSurahProps) {
-  const defaultSurah = lists.find((surah) => surah.number === 1);
-  const [selected, setSelected] = useState(defaultSurah);
+  const defaultSurah = lists.find((surah) => surah.number === 1) || null;
+  const [selected, setSelected] = useState<Surah | null>(defaultSurah);
   const [query, setQuery] = useState('')
 
   const handleChange = (newSurah: Surah) => {
@@ -48,7 +48,7 @@ export default function FilterSurah({ lists, onChange }: FilterSurahProps) {
     <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
     <Combobox.Input
     className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
-    displayValue={(surah) => surah?.list?.transliteration?.id}
+    displayValue={(surah) => surah?.list?.transliteration?.id || ''}
     onChange={(event) => setQuery(event.target.value)}
     />
     <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
