@@ -6,7 +6,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { CORE_URL } from "@/constants/env";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const baseUrl = CORE_URL;
 
 const fetchListData = async (props) => {
     try {

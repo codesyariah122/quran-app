@@ -6,12 +6,12 @@ const nextConfig = {
   output: 'standalone',
   swcMinify: true,
   images: {
-    domains: ['http://localhost:5555'],
+    domains: ['http://localhost:5000'],
   },
   experimental: {
     // appDir: false,
-    outputFileTracingRoot: path.join(__dirname, '../../'),
-    transpilePackages: [''],
+    // outputFileTracingRoot: path.join(__dirname, '../../'),
+    // transpilePackages: [''],
   },
   trailingSlash: true,
 };
