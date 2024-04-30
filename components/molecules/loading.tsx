@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { Spinner } from "flowbite-react";
 
-const Loading = (props:String) => {
+interface LoadingProps {
+  text: String
+}
+
+const Loading = (props:LoadingProps) => {
   return (
     <div className="flex flex-wrap justify-center items-center gap-2">
     <div className="text-center">

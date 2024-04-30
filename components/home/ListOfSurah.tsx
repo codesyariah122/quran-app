@@ -17,7 +17,7 @@ interface Surah {
 	};
 }
 interface ListOfSurahProps {
-	data: Surah[]; 
+	data: Surah[];
 	count: number;
 	loadingMore: boolean;
 	loadMore: () => void;
@@ -39,7 +39,7 @@ const ListOfSurah = ({data, count, loadMore, loadingMore}: ListOfSurahProps) => 
 	};
 
 	const filteredData = selectedSurah
-	? data.filter((surah) => surah.number === selectedSurah.number)
+	? data.filter((surah: Surah) => surah.number === selectedSurah.number)
 	: data;
 
 	return (
@@ -51,7 +51,7 @@ const ListOfSurah = ({data, count, loadMore, loadingMore}: ListOfSurahProps) => 
 		</div>
 		<div className="grid grid-cols-1 mb-6">
 		<div className="col-span-full place-self-center w-full max-w-full">
-		<FilterSurah lists={data} onChange={handleSurahChange}/>
+		<FilterSurah lists={data} onChange={handleSurahChange} />
 		</div>
 		</div>
 		<div className="grid grid-cols-3 place-content-center gap-6 mb-6">

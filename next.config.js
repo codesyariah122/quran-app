@@ -9,9 +9,9 @@ const nextConfig = {
     domains: ['http://localhost:5000'],
   },
   experimental: {
-    // appDir: false,
-    // outputFileTracingRoot: path.join(__dirname, '../../'),
-    // transpilePackages: [''],
+    appDir: false,
+    outputFileTracingRoot: path.join(__dirname, '../../'),
+    transpilePackages: [''],
   },
   trailingSlash: true,
 };

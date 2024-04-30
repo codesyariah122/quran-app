@@ -3,8 +3,9 @@ import { Combobox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
 interface Surah {
-  number: Number,
+  number: number,
   list: {
+    short: string;
     transliteration: {
       id: string;
     };
@@ -16,7 +17,7 @@ interface Surah {
 
 interface FilterSurahProps {
   lists: Surah[];
-  onChange?: (surah: Surah) => void;
+  onChange?: (newSurah: Surah) => void;
 }
 
 export default function FilterSurah({ lists, onChange }: FilterSurahProps) {
@@ -48,7 +49,7 @@ export default function FilterSurah({ lists, onChange }: FilterSurahProps) {
     <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
     <Combobox.Input
     className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
-    displayValue={(surah) => surah?.list?.transliteration?.id || ''}
+    displayValue={(surah: Surah) => surah?.list?.transliteration?.id || ''}
     onChange={(event) => setQuery(event.target.value)}
     />
     <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
@@ -71,7 +72,7 @@ export default function FilterSurah({ lists, onChange }: FilterSurahProps) {
       Nothing found.
       </div>
       ) : (
-      filteredSurah.map((surah) => (
+      filteredSurah.map((surah: Surah) => (
         <Combobox.Option
         key={surah.number}
         className={({ active }) =>
@@ -88,7 +89,7 @@ export default function FilterSurah({ lists, onChange }: FilterSurahProps) {
           selected ? 'font-medium' : 'font-normal'
         }`}
         >
-        {surah.list.transliteration.id}
+        {surah?.list?.transliteration?.id}
         </span>
         {selected ? (
           <span

@@ -15,7 +15,7 @@ export default function Home() {
 
   React.useEffect(() => {
     if (lists) {
-      setListData(lists);
+      setListData(lists.data || []);
       setTimeout(() => {
         setIsLoaded(false)
       }, 1000)
@@ -32,15 +32,17 @@ export default function Home() {
 
   return (
     <DefaultLayout isLoading={isLoaded} pageTitle="Quran App | Kemenag" >
+    <React.Fragment>
     {
       isLoaded && (
         <Loading text="Waiting For Surah"/>
         ) ||
       (
-        <ListOfSurah data={listData?.data} count={displayedCount} loadMore={loadMore} loadingMore={loadingMore} />
+        <ListOfSurah data={listData} count={displayedCount} loadMore={loadMore} loadingMore={loadingMore} />
         )
 
     }
+    </React.Fragment>
     </DefaultLayout>
     );
 }
