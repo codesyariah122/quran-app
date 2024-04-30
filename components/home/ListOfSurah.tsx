@@ -46,7 +46,7 @@ const ListOfSurah = ({data, count, loadMore, loadingMore}: ListOfSurahProps) => 
 		<React.Fragment>
 		<div className="grid grid-cols-1 mb-6">
 		<div className="col-span-full place-self-center w-full max-w-full">
-		<h1 className="text-3xl font-bold">Daftar Surah</h1>
+		<h1 className="md:text-3xl text-lg font-bold">Daftar Surah</h1>
 		</div>
 		</div>
 		<div className="grid grid-cols-1 mb-6">
@@ -54,7 +54,7 @@ const ListOfSurah = ({data, count, loadMore, loadingMore}: ListOfSurahProps) => 
 		<FilterSurah lists={data} onChange={handleSurahChange} />
 		</div>
 		</div>
-		<div className="grid grid-cols-3 place-content-center gap-6 mb-6">
+		<div className="grid md:grid-cols-3 grid-cols-1 items-center place-content-center gap-6 mb-6">
 		{
 			loadingChange && (
 				<Loading text="Waiting for selected surah ..."/>

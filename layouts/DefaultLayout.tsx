@@ -28,7 +28,7 @@ export const DefaultLayout: React.FC<Props> = ({ children, ...props }) => {
     <main className="flex flex-col items-center min-h-screen dark:bg-gray-600 dark:text-gray-50 p-2">
     <div className="flex justify-center mb-6 text-center">
     <div className="shrink-0 w-full">
-    <h1 className="text-5xl">{pageTitle}</h1>
+    <h1 className="md:text-5xl text-3xl">{pageTitle}</h1>
     </div>
     </div>
     <div className="container mx-auto mb-12 p-6">
