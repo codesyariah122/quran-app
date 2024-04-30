@@ -5,28 +5,30 @@
  */
 
 import * as React from 'react';
+import { ReactNode } from 'react';
 import { DarkThemeToggle, Flowbite } from "flowbite-react";
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 interface Props {
-  children?: React.ReactNode | any;
+  children?: ReactNode;
   isLoading?: boolean;
   pageTitle?: string;
 }
 
 export const DefaultLayout: React.FC<Props> = ({ children, ...props }) => {
+  const pageTitle = props.pageTitle ?? "Alquran Kemenag || Web App Quran";
 
   return (
     <Flowbite>
     <Head>
-    <title>{props?.pageTitle}</title>
+    <title>{pageTitle}</title>
     </Head>
 
     <main className="flex flex-col items-center min-h-screen dark:bg-gray-600 dark:text-gray-50 p-2">
     <div className="flex justify-center mb-6 text-center">
     <div className="shrink-0 w-full">
-    <h1 className="text-5xl">{props.pageTitle}</h1>
+    <h1 className="text-5xl">{pageTitle}</h1>
     </div>
     </div>
     <div className="container mx-auto mb-12 p-6">
@@ -35,7 +37,7 @@ export const DefaultLayout: React.FC<Props> = ({ children, ...props }) => {
     <DarkThemeToggle />
     </div>
     </div>
-    {children}
+    {children || <p>There are no children to display.</p>}
     </div>
     </main>
     </Flowbite>
